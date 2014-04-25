@@ -64,12 +64,31 @@ body {
 }
 
 #video {
-    margin-top: 72px;
+    margin-top: 20px;
 }
 
 #videocontainer{
-    margin-top: 100px;
+    margin-top: 113px;
 }
+
+#myfirefox {
+    position: relative;
+    bottom: 8px;
+    left: 183px;
+    width: 215px;
+    font-family: "Open Sans", helvetica, sans-serif;
+    font-size: 22px;
+    background-color: #2293D1;
+    color: #FFFFFF;
+    border: 0 !important;
+
+}
+
+#controls {
+    display: none;
+}
+
+
 .centered {
     text-align: center;
 }
@@ -112,11 +131,34 @@ body {
 .picture #canvas {
     display: block;
     position: absolute;
-    top: 97px;
+    top: 90px;
     left: 248px;
-    
 }
+
+.picture #timers {
+    display: block;
+}
+
 .picture #welcome {
     display: none;
 }
 
+.reviewing #photo{
+    display: block;
+}
+
+.reviewing #canvas {
+    display: block;
+    position: absolute;
+    top: 90px;
+    left: 248px;
+}
+
+.reviewing #welcome {
+    display: none;
+}
+
+.reviewing #controls{
+    display: block;
+    margin-left: 295px;
+}
