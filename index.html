@@ -29,25 +29,38 @@
     </article><!-- /row -->
     <article id="photo" class="row mt centered frame">
       <article class="col-lg-12">
-          <div id="videocontainer">
-            <video id="video"></video>
-          </div>
-          <canvas id="canvas"></canvas>
-          <div id="cover"></div>
+        <div id="timers">
+          <span id="shorttimer">
+          <img src="media/images/timer.png" class="timer"><p class="timer-text">3 Seconds</p>
+          </span>
+          <span id="mediumtimer">
+          <img src="media/images/timer.png" class="timer"><p class="timer-text">5 Seconds</p>
+          </span>
+          <span id="longtimer">
+          <img src="media/images/timer.png" class="timer"><p class="timer-text">10 Seconds</p>
+          </span>
+        </div>
+        <div id="videocontainer">
+          <video id="video"></video>
+        </div>
+        <canvas id="canvas"></canvas>
+        <div id="cover"></div>
       </article>
     </article><!-- /row -->
   </section>
   
 
-  <script src="js/l10n.js"></script> 
-  <script src="js/app.js"></script>
-  <script src="js/jquery-1.11.0.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  
   <!-- http://www.freesound.org/people/thecheeseman/sounds/51360/ -->
   <audio src="media/audio/snap.wav"></audio>
   <!-- http://www.freesound.org/people/aboe/sounds/68900/ -->
   <audio src="media/audio/rip.wav"></audio>
   <!-- http://www.freesound.org/people/duckduckpony/sounds/130508/ -->
   <audio src="media/audio/takeoff.wav"></audio>
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/l10n.js"></script> 
+  <script src="js/app.js"></script>
+
   </body>
 </html>

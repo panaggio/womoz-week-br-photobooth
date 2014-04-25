@@ -63,6 +63,10 @@ body {
     display: none;
 }
 
+#video {
+    margin-top: 72px;
+}
+
 #videocontainer{
     margin-top: 100px;
 }
@@ -81,6 +85,23 @@ body {
     color: #E66000 !important;
 }
 
+.timer {
+    width: 64px;
+    height: 64px;
+    display: block;
+    float: left;
+    margin-top: 10px;
+}
+
+.timer-text{
+    font-family: "Open Sans", helvetica, sans-serif;
+    color: #E66000 !important;
+    font-size: 36px;
+    float: left;
+    margin-left: 15px;
+    margin-right: 100px;
+    margin-top: 15px;
+}
 
 /* Transitions */ 
 
@@ -89,9 +110,10 @@ body {
     
 }
 .picture #canvas {
-    position: absolute;
     display: block;
-    top: -770px;
+    position: absolute;
+    top: 97px;
+    left: 248px;
     
 }
 .picture #welcome {

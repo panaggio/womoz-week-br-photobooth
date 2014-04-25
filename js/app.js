@@ -5,12 +5,14 @@
       cover        = document.querySelector('#cover'),
       canvas       = document.querySelector('#canvas'),
       vidcontainer = document.querySelector('#videocontainer'),
-      tabs         = document.getElementsByClassName('tab');
+      tabs         = document.getElementsByClassName('tab'),
+      timers       = $("span[id$='timer']");
+      
 
   var ctx    = canvas.getContext('2d'),
      streaming    = false,
-     width  = 800,
-     height = 600,
+     width  = 606,
+     height = 606,
      state  = 'intro';
 
  var audio = document.querySelectorAll('audio'),
@@ -19,6 +21,13 @@
         rip:     audio[1],
         takeoff: audio[2]
       };
+
+  /* BRANDING */
+  var img = new Image(),
+      imgwidth = 606,
+      imgheight = 606;
+  img.src = 'media/images/frame.png';
+    
   
   setstate(state);
 
@@ -41,8 +50,8 @@
           video.src = vendorURL ? vendorURL.createObjectURL(stream) : stream;
         }
         video.play();
-        video.style.width = width + 'px';
-        video.style.height = height + 'px';
+        video.style.width = 534 + 'px';
+        video.style.height = 403 + 'px';
       },
       function(err) {
         console.log("An error occured! " + err);
@@ -56,16 +65,48 @@
     document.body.className = newstate;
   }
 
+  function takepicture(callback) {
+    sounds.shutter.play();
+    ctx.save();
+    ctx.translate(width, 22);
+    ctx.scale(-1, 1);
+    ctx.drawImage(video, 0, 0, width, finalheight);
+    ctx.restore();
+    ctx.scale(1, 1);
+    ctx.drawImage(img, 606 - imgwidth, 606 - imgheight, imgwidth, imgheight);
+
+    if (callback)
+      callback();
+  }
+
+function timer(time,update,complete) {
+    var start = new Date().getTime();
+    var interval = setInterval(function() {
+        var now = time-(new Date().getTime()-start);
+        if( now <= 0) {
+            clearInterval(interval);
+            complete();
+        }
+        else update(Math.floor(now/1000));
+    },100); 
+}
+
+
+function shareOrRetake(){
+  document.getElementById("timers").hidden = true;
+}
   /* Event Handlers */
+
+
 video.addEventListener('play', function(ev){
     if (!streaming) {
       console.log(video.clientHeight);
       finalheight = video.clientHeight / (video.clientWidth/width);
-      video.setAttribute('width', width);
-      video.setAttribute('height', finalheight);
+      video.setAttribute('width', 534);
+      video.setAttribute('height', 438);
       canvas.width = width;
-      canvas.height = finalheight;
-      ctx.drawImage(img, 590 - imgwidth, 440 - imgheight, imgwidth, imgheight);
+      canvas.height = height;
+      ctx.drawImage(img, 606 - imgwidth, 606 - imgheight, imgwidth, imgheight);
       streaming = true;
       vidcontainer.classname = 'playing';
     }
@@ -83,5 +124,56 @@ startbutton.addEventListener('click', function(ev){
 
   }, false);
 
+
+shorttimer.addEventListener('click', function(ev){
+  timers[1].hidden = true;
+  timers[2].hidden = true;
+
+  timer(3000,
+    function(timeleft) { 
+      timers[0].children[1].innerHTML = timeleft;
+    },
+    function() { 
+      timers[1].hidden = false;
+      timers[2].hidden = false;
+      timers[0].children[1].innerHTML = "3 Seconds";
+      takepicture(shareOrRetake);
+    }
+  );
+}, false);
+
+mediumtimer.addEventListener('click', function(ev){
+  timers[0].hidden = true;
+  timers[2].hidden = true;
+
+  timer(5000,
+    function(timeleft) {
+      timers[1].children[1].innerHTML = timeleft;
+    },
+    function() { 
+      timers[0].hidden = false;
+      timers[2].hidden = false;
+      timers[1].children[1].innerHTML = "5 Seconds";
+      takepicture();
+    }
+  );
+}, false);
+
+longtimer.addEventListener('click', function(ev){
+  timers[0].hidden = true;
+  timers[1].hidden = true;
+
+  timer(10000, 
+    function(timeleft) { 
+       timers[2].children[1].innerHTML = timeleft;
+    },
+    function() { 
+      timers[0].hidden = false;
+      timers[1].hidden = false;
+      timers[2].children[1].innerHTML = "10 Seconds";
+      takepicture();
+    }
+  );
+}, false);
 
 })();
