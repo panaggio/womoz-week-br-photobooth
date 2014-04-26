@@ -11,9 +11,9 @@
   <body>
 
   <section class="container">
-  <p class="tab tab-active" id="tab-welcome">Welcome</p>
-  <p class="tab tab-inactive" id="tab-camera">Camera</p>
-  <p class="tab tab-inactive" id="tab-share">Share</p>
+  <span class="tab tab-active" id="tab-welcome">Welcome</span>
+  <span class="tab tab-inactive" id="tab-camera">Camera</span>
+  <span class="tab tab-inactive" id="tab-share">Share</span>
     <article id="welcome" class="row mt centered frame">
       <article class="col-lg-12">
           <br>
@@ -45,17 +45,16 @@
           <img src="media/images/again.png" class="timer"><p class="timer-text">Try again</p>
           </span>
           <span id="share">
-          <img src="media/images/twitter.png" class="timer"><p class="timer-text">Twit this!</p>
+          <img src="media/images/twitter.png" class="timer"><p class="timer-text">Tweet this!</p>
           </span>
         </div>
         <div id="videocontainer">
           <video id="video"></video>
         </div>
         <canvas id="canvas"></canvas>
-        <div id="adjective">
+        <div id="adjective" hidden="true">
           <select id="myfirefox">
-            <option value="">escolha uma opção</option>
-            <option value="bonito">bonito</option>
+            <option value="bonito" selected >bonito</option>
             <option value="rápido">rápido</option>
             <option value="eficaz">eficaz</option>
             <option value="intuitivo">intuitivo</option>
@@ -84,14 +83,22 @@
             <option value="rápido">rápido</option>
             <option value="fantástico">fantástico</option>
             <option value="prático">prático</option>
-            <option value="prático">glamoroso</option>
+            <option value="glamuroso">glamuroso</option>
             <option value="chique">chique</option>
           </select>
         </div>
-        <div id="flash">
-        </div>
       </article>
     </article><!-- /row -->
+    <article id="twitter" class="row mt centered frame">
+      <article class="col-lg-12">
+        <h1>Wow, much Firefox. Such love.</h1>
+        <span id="waiting-upload"> Please, wait until we upload your image to imgur. It'll be quick, I promise.</span>
+        <span id="completed-upload">
+          <p id="readytoshare"> We've uploaded your photo to imgur. Go ahead and click on the bird to tweet it! </p>
+          <img src="media/images/twitter.png" alt="Share on Twitter" id="twittershare">
+          <p id="share-elsewhere"> If you want to share it elsewhere, here is your url <a href="" id="imgur"></a></p>
+        </span>        
+      </article>
   </section>
   
 

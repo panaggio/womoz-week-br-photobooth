@@ -48,12 +48,12 @@ body {
     background-color: white;
 }
 
-#welcome h1 {
+h1 {
     color: #E66000;
     font-size: 60px;
 }
 
-#welcome p {
+p {
    color: #4D4E53;
    font-size: 38px;
    line-height: 1.3em;
@@ -88,6 +88,25 @@ body {
     display: none;
 }
 
+#waiting-upload {
+    color: #4D4E53;
+    font-size: 28px;
+    line-height: 1.3em;
+    position: relative;
+    top:250px;
+}
+
+#readytoshare{
+    margin-top: 60px;
+}
+
+#share-elsewhere{
+    margin-top: 100px;
+}
+
+#twittershare{
+    margin-top: 80px;
+}
 
 .centered {
     text-align: center;
@@ -124,6 +143,26 @@ body {
 
 /* Transitions */ 
 
+.intro #welcome {
+    display: block;
+}
+
+.intro #photo {
+    display: none;
+}
+
+.intro #canvas {
+    display: none;
+}
+
+.intro #timers {
+    display: none;
+}
+
+.intro #twitter {
+    display: none;
+}
+
 .picture #photo {
     display: block;
     
@@ -140,6 +179,10 @@ body {
 }
 
 .picture #welcome {
+    display: none;
+}
+
+.picture #twitter {
     display: none;
 }
 
@@ -160,5 +203,41 @@ body {
 
 .reviewing #controls{
     display: block;
-    margin-left: 295px;
+    margin-left: 234px;
 }
+
+.reviewing #twitter {
+    display: none;
+}
+
+.sharing #welcome {
+    display: none;
+}
+
+.sharing #photo {
+    display: none;
+}
+
+.sharing #completed-upload{
+    display: none;
+}
+.sharing #twitter {
+    display: block;
+}
+
+.uploaded #welcome{
+    display: none;
+}
+
+.uploaded #photo{
+    display: none;
+}
+
+.uploaded #twitter {
+    display: block;
+}
+
+.uploaded #waiting-upload{
+    display: none;
+}
+
