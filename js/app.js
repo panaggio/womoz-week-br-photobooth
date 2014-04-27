@@ -9,7 +9,7 @@
       tabs         = document.getElementsByClassName('tab'),
       adjective    = document.querySelector('#adjective'),
       urlfield     = document.querySelector('#imgur'),
-      timers       = $("span[id$='timer']"),
+      timers       = document.querySelectorAll("span[id$='timer']"),
       shareImage;
       
 
@@ -129,7 +129,7 @@ function shareOrRetake(){
   /* Event Handlers */
 
 function appendAdjective(){
-  word = $('#myfirefox').val()
+  word = document.querySelector('#myfirefox').value;
   ctx.font="22px Open Sans";
   ctx.fillStyle = "#FFFFFF";
   ctx.fillText(word,383,537);
@@ -236,7 +236,7 @@ longtimer.addEventListener('click', function(ev){
 }, false);
 
 retake.addEventListener('click', function(ev){
-  $('#takephoto').click();
+  document.querySelector('#takephoto').click();
   adjective.removeAttribute('hidden');
 }, false);
 
@@ -249,7 +249,7 @@ share.addEventListener('click', function(ev){
 
 
 twittershare.addEventListener('click', function(ev){
-  var textToTweet = "Meu Firefox nunca esteve tão " + $('#myfirefox').val() + ". " + "#Firefox #FirefoxBrasil " + urlfield.href ; 
+  var textToTweet = "Meu Firefox nunca esteve tão " + document.querySelector('#myfirefox').value + ". " + "#Firefox #FirefoxBrasil " + urlfield.href ; 
   var twtLink = 'http://twitter.com/home?status=' +encodeURIComponent(textToTweet);
   window.open(twtLink,'_blank');
 }, false);
