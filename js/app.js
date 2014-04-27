@@ -21,9 +21,7 @@
 
  var audio = document.querySelectorAll('audio'),
      sounds = {
-        shutter: audio[0],
-        rip:     audio[1],
-        takeoff: audio[2]
+        shutter: audio[0]
       };
 
   /* BRANDING */
