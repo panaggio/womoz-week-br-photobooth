@@ -1,29 +1,22 @@
-# Interaction Cam 
+# Launch Party Photobooth!
 
-Interaction Cam is a WebRTC powered photobooth application. It is named that way because we are planning to use [MaKey MaKey](http://www.makeymakey.com/) to trigger the camera with a high-five of visitors of the [Mozilla Festival](http://mozillafestival.org/)
+This app was created to satisfy the need of a photobooth during Brazil's Firefox Australis launch party that took place at FISL. We've created an app based on [Christian Heilmann's Interaction Cam](http://codepo8.github.com/interaction-cam/). I've made a few changes (since we were not use MaKey MaKey unfortunately) and have created a personalized framing for our event.
 
 ## Setup
 
-The app has been tested on Chrome, Opera an Firefox Nightly 18. In order to get it to work on Chrome, you need to grant it access to the Camera and in Firefox Nightly you need to enable streaming media:
+The app has been tested on Chrome, Opera an Firefox Nightly 18. In order to get it to work on Chrome, you need to grant it access to theCamera. On Firefox, it should be ok since getting an stream from the Camera has already landed on stable!
 
-* Type `about:config` and say yes that you want to make changes
-* Find the `media.navigator.enabled` entry and set it to true
-
-## Demo 
-
-The demo is [right here on GitHub on this repository](http://codepo8.github.com/interaction-cam/):
-
-![screenshot](http://codepo8.github.com/interaction-cam/screenshot.png)@100
-
+The demo is [right here on GitHub on this repository](http://marcussaad.github.io/launchparty-photobooth/).
 
 ## Usage
 
-The cam is very simple - I deliberately did not use any fancy image effects as there are enough cam examples like that out there. 
+Design is simplistic and functional (not really, but I did my best). 
 
-* Press space or click on the video to take a photo and get to the review
-* Press the "Uh, let's try that again" button or hit the left cursor key to take another photo 
-* Press the "Win! Upload this!" button or hit the right cursor key to upload the photo to imgUrl.
-* Once uploaded, hit the "Take another" button or the right cursor key to take another photo
+* Click on the Camera Icon (Yes, it was borrowed from Firefox OS intentionally)
+* Before taking a picture, customize your Adjective by selecting a new one on the dropdown.
+* You'll need to use timers to take a picture, they are set to shoot on 3, 5 or 10 seconds.
+* You may try again if the result doesn't meet your needs.
+* If you're good to go, go ahead and click on Share This! Your image will be uploaded to imgur. As soon as the callback is made, click on the Twitter Icon to share it using your credentials.
 
 ## Image uploading 
 
