@@ -8,6 +8,10 @@ The app has been tested on Chrome, Opera an Firefox Nightly 18. In order to get 
 
 The demo is [right here on GitHub on this repository](http://marcussaad.github.io/launchparty-photobooth/).
 
+##Screenshot
+
+![screenshot](http://i.imgur.com/wmnvC7v.png)
+
 ## Usage
 
 Design is simplistic and functional (not really, but I did my best). 
