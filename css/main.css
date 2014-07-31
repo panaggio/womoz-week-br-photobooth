@@ -17,19 +17,18 @@ body {
     position: relative;
     top:24px;
     left:10px;
-    width: 153px;
     height: 41px;
-    text-indent: 48px;
     line-height: 37px;
+    padding: 0 50px;
 }
 
 .tab-active {
-    background-image: url(../media/images/tab-active.png);
+    background: #FFF;
     z-index: 100;
 }
 
 .tab-inactive {
-    background-image: url(../media/images/tab-inactive.png);
+    background: #CCC;
     z-index: 1;
 }
 
@@ -73,12 +72,12 @@ p {
 
 #myfirefox {
     position: relative;
-    bottom: 8px;
-    left: 183px;
-    width: 215px;
-    font-family: "Open Sans", helvetica, sans-serif;
-    font-size: 28px;
-    background-color: #2293D1;
+    bottom: 11px;
+    left: 140px;
+    width: 180px;
+    font-family: "Open Sans";
+    font-size: 32px;
+    background-color: #ef3f3e;
     color: #FFFFFF;
     border: 0 !important;
 
