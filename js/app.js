@@ -87,35 +87,29 @@
   }
 
   function upload() {
-      var head = /^data:image\/(png|jpeg);base64,/,
-      fd = new FormData(),
-      xhr = new XMLHttpRequest();
 
-      setstate('sharing');
+    var head = /^data:image\/(png|jpeg);base64,/;
 
-      shareImage = canvas.toDataURL('image/png', 1).replace(head, '');
+    setstate('sharing');
 
-      fd.append('image', shareImage);
+    shareImage = canvas.toDataURL('image/png', 1).replace(head, '');
 
-      xhr.open('POST', 'https://api.imgur.com/3/image.json');
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:image/png;base64,' + shareImage);
+    pom.setAttribute('download', 'foto-' + Math.floor(Date.now() / 1000) + '.png');
 
-      xhr.addEventListener('error', function(ev) {
-          console.log('Upload Error!');
-      }, false);
+    if (document.createEvent) {
 
-      xhr.addEventListener('load', function(ev) {
-          try {
-              var links = JSON.parse(xhr.responseText);
-              urlfield.innerHTML = links.data.link;
-              urlfield.href = links.data.link;
-              setstate('uploaded');
-          } catch(e) {
-              console.log('Upload Error!' + e);
-          }
-      }, false);
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
 
-      xhr.setRequestHeader("Authorization", "Client-ID a41e1ecad14d783");
-      xhr.send(fd);
+    } else {
+
+        pom.click();
+
+    }
+
   }
 
 
@@ -244,19 +238,6 @@
       tabs[1].className = "tab tab-inactive";
       video = null;
       upload();
-  }, false);
-
-
-  twittershare.addEventListener('click', function(ev) {
-      var textToTweet = "Criar para a web é " +
-          document.querySelector('#myfirefox').value +
-          " #MakerPartyWeekSP #Webmaker #TeachTheWeb" +
-          urlfield.href;
-
-      var twtLink = 'http://twitter.com/home?status=' +
-          encodeURIComponent(textToTweet);
-
-      window.open(twtLink,'_blank');
   }, false);
 
 })();
