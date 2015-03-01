@@ -1,6 +1,6 @@
 # Maker Party Week Photobooth!
 
-This web app was created for [Maker Party Week São Paulo http://blog.mozillabrasil.org.br/i-maker-party-week-sao-paulo/]. I've created this web app based on [Marcus Saad's Launchparty Phootobooth http://marcussaad.github.io/launchparty-photobooth/], which was based on [Christian Heilmann's Interaction Cam](http://codepo8.github.com/interaction-cam/).
+This web app was created for [Maker Party Week São Paulo](http://blog.mozillabrasil.org.br/i-maker-party-week-sao-paulo/). I've created this web app based on [Marcus Saad's Launchparty Phootobooth](http://marcussaad.github.io/launchparty-photobooth/), which was based on [Christian Heilmann's Interaction Cam](http://codepo8.github.com/interaction-cam/).
 
 ## Usage
 
